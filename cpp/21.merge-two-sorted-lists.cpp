@@ -24,27 +24,27 @@ public:
     ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
     {
 
-        if (list1 == nullptr)
+        if (list1 == nullptr) // if list1 is empty, return list2
             return list2;
-        if (list2 == nullptr)
+        if (list2 == nullptr) // if list2 is empty, return list1
             return list1;
 
-        ListNode *head = nullptr;
-        ListNode *tail = nullptr;
+        ListNode *head = nullptr; // head of the merged list
+        ListNode *tail = nullptr; // tail of the merged list
 
-        while (list1 != nullptr && list2 != nullptr)
+        while (list1 != nullptr && list2 != nullptr) //
         {
             if (list1->val < list2->val)
             {
                 if (head == nullptr)
                 {
-                    head = list1;
-                    tail = list1;
+                    head = list1; // if head is null, assign list1 to head
+                    tail = list1; // assign list1 to tail
                 }
                 else
                 {
-                    tail->next = list1;
-                    tail = tail->next;
+                    tail->next = list1; // assign list1 to tail->next
+                    tail = tail->next;  // assign tail->next to tail
                 }
                 list1 = list1->next;
             }
